@@ -2,15 +2,15 @@ import React, { useState } from 'react';
 import { nanoid } from 'nanoid';
 import { Label, Form, Input, Button } from './ContactForm.styled';
 import { useSelector, useDispatch } from 'react-redux';
-import { addContact } from 'redux/operations';
-import { getContacts } from 'redux/selectors';
+import { addContact } from 'redux/contacts/operations';
+import { selectContacts } from 'redux/contacts/selectors';
 import { toast } from 'react-toastify';
 
 export const ContactForm = () => {
   const idName = nanoid(5);
   const idNumber = nanoid(5);
   const contactId = nanoid(5);
-  const { contacts } = useSelector(getContacts);
+  const { contacts } = useSelector(selectContacts);
   const [nameForm, setNameForm] = useState('');
   const [number, setNumber] = useState('');
   const dispatch = useDispatch();

@@ -1,15 +1,15 @@
 import React from 'react';
 import { List, Item, Button } from './ContactList.styled';
-import { deleteContact } from 'redux/operations';
+import { deleteContact } from 'redux/contacts/operations';
 import { useSelector, useDispatch } from 'react-redux';
-import { getContacts, getValue } from 'redux/selectors';
-import { fetchContacts } from 'redux/operations';
+import { selectContacts, selectValue } from 'redux/contacts/selectors';
+import { fetchContacts } from 'redux/contacts/operations';
 import { Loader } from 'components/Loader/Loader';
 import { useEffect } from 'react';
 
 export const ContactList = () => {
-  const { contacts, isLoading, error } = useSelector(getContacts);
-  const filter = useSelector(getValue);
+  const { contacts, isLoading, error } = useSelector(selectContacts);
+  const filter = useSelector(selectValue);
   const dispatch = useDispatch();
 
   useEffect(() => {

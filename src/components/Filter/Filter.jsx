@@ -2,11 +2,11 @@ import React from 'react';
 import { nanoid } from 'nanoid';
 import { Label, Input } from './Filter.styled';
 import { useSelector, useDispatch } from 'react-redux';
-import { getValue } from 'redux/selectors';
-import { setTextFilter } from 'redux/filtersSlice';
+import { selectValue } from 'redux/contacts/selectors';
+import { setTextFilter } from 'redux/contacts/slice';
 
 export const Filter = () => {
-  const value = useSelector(getValue);
+  const value = useSelector(selectValue);
   const dispatch = useDispatch();
 
   const filterContact = e => {
