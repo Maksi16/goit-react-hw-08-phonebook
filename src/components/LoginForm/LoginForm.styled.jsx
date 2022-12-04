@@ -1,23 +1,13 @@
 import styled from 'styled-components';
 
 export const Form = styled.form`
-  width: 300px;
+  display: grid;
+  justify-items: center;
   margin-right: auto;
   margin-left: auto;
   padding: 16px;
   text-align: center;
-  /* border: 1px solid black;
-  background-color: #dddbda; */
 `;
-
-export const Label = styled.label`
-  display: grid;
-  justify-items: center;
-  font-size: 18px;
-  font-weight: 500;
-  margin-bottom: 24px;
-`;
-
 export const Input = styled.input`
   width: 200px;
   height: 24px;
@@ -28,9 +18,10 @@ export const Input = styled.input`
     border-color: green;
   }
 `;
-
 export const Button = styled.button`
+  width: 100px;
   padding: 4px;
+  margin-top: 16px;
   border: 1px solid grey;
   background-color: transparent;
   border-radius: 4px;
@@ -41,8 +32,4 @@ export const Button = styled.button`
     background-color: grey;
     color: white;
   }
-`;
-export const Box = styled.div`
-  margin-top: 24px;
-  margin-bottom: 24px;
 `;

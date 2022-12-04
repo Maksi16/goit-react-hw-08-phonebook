@@ -1,5 +1,5 @@
 import React from 'react';
-import { List, Item, Button } from './ContactList.styled';
+import { List, Item, Button, Titel } from './ContactList.styled';
 import { deleteContact } from 'redux/contacts/operations';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectContacts, selectValue } from 'redux/contacts/selectors';
@@ -26,20 +26,23 @@ export const ContactList = () => {
   );
 
   return (
-    <List>
-      {isLoading && <Loader />}
-      {error && <p>{error}</p>}
-      {contacts &&
-        contactsState.map(({ id, name, number }) => (
-          <Item key={id}>
-            <p>
-              {name} : {number}
-            </p>
-            <Button type="button" onClick={() => dispatch(deleteContact(id))}>
-              Delete
-            </Button>
-          </Item>
-        ))}
-    </List>
+    <>
+      <Titel>You contacts</Titel>
+      <List>
+        {isLoading && <Loader />}
+        {error && <p>{error}</p>}
+        {contacts &&
+          contactsState.map(({ id, name, number }) => (
+            <Item key={id}>
+              <p>
+                {name} : {number}
+              </p>
+              <Button type="button" onClick={() => dispatch(deleteContact(id))}>
+                Delete
+              </Button>
+            </Item>
+          ))}
+      </List>
+    </>
   );
 };

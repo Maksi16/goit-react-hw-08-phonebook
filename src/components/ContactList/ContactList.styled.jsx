@@ -3,7 +3,11 @@ import styled from 'styled-components';
 export const List = styled.ul`
   margin-left: auto;
   margin-right: auto;
+  padding: 4px;
   width: 350px;
+  text-align: center;
+  /* border: 1px solid black; */
+  background-color: #fafafa;
 `;
 export const Item = styled.li`
   display: flex;
@@ -23,4 +27,7 @@ export const Button = styled.button`
     background-color: grey;
     color: white;
   }
+`;
+export const Titel = styled.h1`
+  text-align: center;
 `;
