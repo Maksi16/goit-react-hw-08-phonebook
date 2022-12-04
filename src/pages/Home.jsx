@@ -1,7 +1,14 @@
-export const Home = () => {
+import styled from 'styled-components';
+
+const Titel = styled.h1`
+  text-align: center;
+  margin-top: 50px;
+`;
+
+export default function Home() {
   return (
     <div>
-      <h1> Welcome to the PhoneBook! </h1>
+      <Titel> Welcome to the PhoneBook! </Titel>
     </div>
   );
-};
+}

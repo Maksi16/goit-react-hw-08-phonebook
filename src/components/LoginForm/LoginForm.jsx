@@ -21,27 +21,11 @@ export const LoginForm = () => {
     <form onSubmit={handleSubmit} autoComplete="off">
       <label>
         <p>Email</p>
-        <input
-          placeholder="Enter Username"
-          pr="10rem"
-          borderColor="green.200"
-          width="auto"
-          variant="flushed"
-          type="email"
-          name="email"
-        />
+        <input placeholder="Enter Username" type="email" name="email" />
       </label>
       <label>
         <p>Password</p>
-        <input
-          placeholder="Enter password"
-          pr="10rem"
-          borderColor="green.200"
-          width="auto"
-          variant="flushed"
-          type="password"
-          name="password"
-        />
+        <input placeholder="Enter password" type="password" name="password" />
       </label>
 
       <button type="submit">Log In</button>

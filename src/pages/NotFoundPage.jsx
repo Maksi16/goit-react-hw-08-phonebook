@@ -14,7 +14,7 @@ const LinkWrap = styled(Link)`
   box-shadow: 4px -4px 36px 0px rgba(34, 60, 80, 0.2) inset;
 `;
 
-export const NotFound = () => {
+export const NotFoundPage = () => {
   return (
     <div>
       <LinkWrap to="/">Go home</LinkWrap>

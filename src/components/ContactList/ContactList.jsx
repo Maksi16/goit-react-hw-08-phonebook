@@ -30,10 +30,10 @@ export const ContactList = () => {
       {isLoading && <Loader />}
       {error && <p>{error}</p>}
       {contacts &&
-        contactsState.map(({ id, name, phone }) => (
+        contactsState.map(({ id, name, number }) => (
           <Item key={id}>
             <p>
-              {name} : {phone}
+              {name} : {number}
             </p>
             <Button type="button" onClick={() => dispatch(deleteContact(id))}>
               Delete

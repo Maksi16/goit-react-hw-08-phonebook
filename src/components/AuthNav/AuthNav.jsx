@@ -1,14 +1,14 @@
-import { NavLink } from 'react-router-dom';
+import { LinkNav, Text, Header } from './AuthNav.stelyd';
 
 export const AuthNav = () => {
   return (
-    <header>
-      <NavLink to="/register">
-        <p>Register</p>
-      </NavLink>
-      <NavLink to="/login">
-        <p>Log In</p>
-      </NavLink>
-    </header>
+    <Header>
+      <LinkNav to="/register">
+        <Text>Register</Text>
+      </LinkNav>
+      <LinkNav to="/login">
+        <Text>Log In</Text>
+      </LinkNav>
+    </Header>
   );
 };

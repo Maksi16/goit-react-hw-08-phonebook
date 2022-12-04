@@ -42,3 +42,7 @@ export const Button = styled.button`
     color: white;
   }
 `;
+export const Box = styled.div`
+  margin-top: 24px;
+  margin-bottom: 24px;
+`;

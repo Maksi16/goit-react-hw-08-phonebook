@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { nanoid } from 'nanoid';
-import { Label, Form, Input, Button } from './ContactForm.styled';
+import { Label, Form, Input, Button, Box } from './ContactForm.styled';
 import { useSelector, useDispatch } from 'react-redux';
 import { addContact } from 'redux/contacts/operations';
 import { selectContacts } from 'redux/contacts/selectors';
@@ -9,9 +9,8 @@ import { toast } from 'react-toastify';
 export const ContactForm = () => {
   const idName = nanoid(5);
   const idNumber = nanoid(5);
-  const contactId = nanoid(5);
   const { contacts } = useSelector(selectContacts);
-  const [nameForm, setNameForm] = useState('');
+  const [name, setNameForm] = useState('');
   const [number, setNumber] = useState('');
   const dispatch = useDispatch();
 
@@ -25,13 +24,13 @@ export const ContactForm = () => {
     e.preventDefault();
     if (
       contacts.find(
-        contact => contact.name.toLowerCase() === nameForm.toLowerCase()
+        contact => contact.name.toLowerCase() === name.toLowerCase()
       )
     ) {
-      toast.error(`${nameForm} is already in contacts.`);
+      toast.error(`${name} is already in contacts.`);
       return;
     }
-    dispatch(addContact({ id: contactId, name: nameForm, phone: number }));
+    dispatch(addContact({ name, number }));
     reset();
   };
   const reset = () => {
@@ -40,7 +39,7 @@ export const ContactForm = () => {
   };
 
   return (
-    <div>
+    <Box>
       <Form onSubmit={handlerSubmit}>
         <Label>
           Name
@@ -49,7 +48,7 @@ export const ContactForm = () => {
             type="text"
             name="name"
             onChange={handlerChangName}
-            value={nameForm}
+            value={name}
             placeholder="Enter a name"
             pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
             title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
@@ -72,6 +71,6 @@ export const ContactForm = () => {
         </Label>
         <Button type="submit">Add contact</Button>
       </Form>
-    </div>
+    </Box>
   );
 };

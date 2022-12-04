@@ -1,12 +1,13 @@
 import { Helmet } from 'react-helmet';
+import { RegisterForm } from '../components/RegisterForm/RegisterForm';
 
-export const Registr = () => {
+export default function Registr() {
   return (
     <div>
       <Helmet>
-        <h1>Registration</h1>
+        <title>Registration</title>
       </Helmet>
-      {/* <RegisterForm /> */}
+      <RegisterForm />
     </div>
   );
-};
+}
